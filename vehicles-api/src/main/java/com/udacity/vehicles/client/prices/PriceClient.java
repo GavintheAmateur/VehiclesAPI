@@ -28,7 +28,7 @@ public class PriceClient {
      * @param vehicleId ID number of the vehicle for which to get the price
      * @return Currency and price of the requested vehicle,
      *   error message that the vehicle ID is invalid, or note that the
-     *   service is down.
+     *   exception is down.
      */
     public String getPrice(Long vehicleId) {
         try {

@@ -29,7 +29,7 @@ public class MapsClient {
      * Gets an address from the Maps client, given latitude and longitude.
      * @param location An object containing "lat" and "lon" of location
      * @return An updated location including street, city, state and zip,
-     *   or an exception message noting the Maps service is down
+     *   or an exception message noting the Maps exception is down
      */
     public Location getAddress(Location location) {
         try {
@@ -47,7 +47,7 @@ public class MapsClient {
 
             return location;
         } catch (Exception e) {
-            log.warn("Map service is down");
+            log.warn("Map exception is down");
             return location;
         }
     }

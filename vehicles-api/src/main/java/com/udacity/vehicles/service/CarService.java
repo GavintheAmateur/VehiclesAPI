@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
- * Implements the car service create, read, update or delete
+ * Implements the car exception create, read, update or delete
  * information about vehicles, as well as gather related
  * location and price data when desired.
  */
@@ -49,17 +49,17 @@ public class CarService {
          *   to get the price based on the `id` input'
          * TODO: Set the price of the car
          * Note: The car class file uses @transient, meaning you will need to call
-         *   the pricing service each time to get the price.
+         *   the pricing exception each time to get the price.
          */
 
 
         /**
          * TODO: Use the Maps Web client you create in `VehiclesApiApplication`
          *   to get the address for the vehicle. You should access the location
-         *   from the car object and feed it to the Maps service.
+         *   from the car object and feed it to the Maps exception.
          * TODO: Set the location of the vehicle, including the address information
          * Note: The Location class file also uses @transient for the address,
-         * meaning the Maps service needs to be called each time for the address.
+         * meaning the Maps exception needs to be called each time for the address.
          */
 
 
