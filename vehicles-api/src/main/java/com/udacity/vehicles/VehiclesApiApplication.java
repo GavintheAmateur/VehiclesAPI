@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 /**
@@ -18,6 +21,7 @@ import org.springframework.web.reactive.function.client.WebClient;
  */
 @SpringBootApplication
 @EnableJpaAuditing
+@EnableEurekaClient
 public class VehiclesApiApplication {
 
     public static void main(String[] args) {
@@ -41,6 +45,12 @@ public class VehiclesApiApplication {
     }
 
     @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
+    }
+
+
+    @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
@@ -60,9 +70,9 @@ public class VehiclesApiApplication {
      * @param endpoint where to communicate for the pricing API
      * @return created pricing endpoint
      */
-    @Bean(name="pricing")
-    public WebClient webClientPricing(@Value("${pricing.endpoint}") String endpoint) {
-        return WebClient.create(endpoint);
-    }
+//    @Bean(name="pricing")
+//    public WebClient webClientPricing(@Value("${pricing.endpoint}") String endpoint) {
+//        return WebClient.create(endpoint);
+//    }
 
 }

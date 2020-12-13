@@ -7,6 +7,11 @@ import java.math.BigDecimal;
  */
 public class Price {
 
+    @Override
+    public String toString() {
+        return price.toString()+" "+currency;
+    }
+
     private String currency;
     private BigDecimal price;
     private Long vehicleId;
